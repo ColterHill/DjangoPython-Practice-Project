@@ -1,0 +1,44 @@
+{% extends 'users/user-base.html' %}
+{% load i18n widget_tweaks %}
+
+{% block body %}
+
+
+    <div class="container" style="margin-top: 5%;">
+        <div class="row align-items-center">
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                    <div class="card-header text-white bg-info">
+                        <div class="card-title">
+                            Sign Up
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">{{ field.name }}</label>
+                                    {{ field|attr:"class:form-control" }}
+                                </div>
+                            {% endfor %}
+                            <button class="btn btn-outline-info" type="submit">Signup</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <h6>Already have an account? <a href="{% url 'login' %}"><span class="badge text-bg-secondary">Login</span></a></h6>
+    </div>
+
+
+
+<!-- <form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Sign Up</button>
+</form> -->
+
+{% endblock %}
