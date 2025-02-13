@@ -6,6 +6,7 @@ from .forms import ItemForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
+from users.models import Profile
 
 # Create your views here.
 
@@ -62,3 +63,8 @@ def delete_item(request, id):
 
     return render(request, 'food/item-delete.html', {'item':item})
     
+
+def profile_view(request):
+    profile_list = Profile.objects.all()
+    context = {'profile_list': profile_list}
+    return render(request, 'base.html', context)

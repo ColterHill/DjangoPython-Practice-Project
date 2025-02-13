@@ -28,6 +28,7 @@ urlpatterns = [
     path('login/', authentication_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', user_views.logout_view, name='logout'),
     path('profile/', user_views.profilepage, name='profile'),
+    path('user-admin/', user_views.UserAdminClassView.as_view(template_name='users/user-admin.html'), name='user-admin')
 ]
 
 urlpatterns += [
