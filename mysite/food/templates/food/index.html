@@ -17,7 +17,7 @@
                 <h3>{{ item.item_name }}</h3>
                 <h5>{{ item.item_description}}</h5>
                 <h6>${{ item.item_price }}</h6>
-                <h6>Created by: {{ item.user_name }}</h6>
+                <h6>Created By User: {{ item.user_name }}</h6>
             </div>
             <div class="col-md-2">
                 <a role="button" class="btn btn-success" href="{% url 'food:detail' item.id %}">Details</a>
